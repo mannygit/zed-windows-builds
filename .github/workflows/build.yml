@@ -1,6 +1,13 @@
 name: Build Zed Nightly
 
 on:
+  workflow_dispatch:
+    inputs:
+      schedule:
+        description: 'Manual Release'
+        required: true
+        default: false
+        type: boolean
   schedule:
     - cron: "0 0 * * *" # Runs every night at midnight UTC
   push:
